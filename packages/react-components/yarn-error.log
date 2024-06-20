@@ -14,13 +14,13 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: ENOENT: no such file or directory, copyfile '/Users/sharon/Library/Caches/Yarn/v6/npm-strip-ansi-7.1.0-d5b6568ca689d8561370b0707685d22434faff45-integrity/node_modules/strip-ansi/package.json' -> '/Users/sharon/Developer/recylink-commons/packages/react-fields/node_modules/@chromatic-com/storybook/node_modules/strip-ansi/package.json'
+  Error: ENOENT: no such file or directory, copyfile '/Users/sharon/Library/Caches/Yarn/v6/npm-globals-13.24.0-8432a19d78ce0c1e833949c36adb345400bb1171-integrity/node_modules/globals/index.d.ts' -> '/Users/sharon/Developer/recylink-commons/packages/react-components/node_modules/@eslint/eslintrc/node_modules/globals/index.d.ts'
 
 npm manifest: 
   {
-    "name": "@recylink/react-fields",
-    "version": "1.4.8",
-    "description": "Recylink fields",
+    "name": "@recylink/react-components",
+    "version": "1.7.6",
+    "description": "Recylink components",
     "author": "diegoolavarria <olavarriaubeda.diego@gmail.com>",
     "homepage": "https://github.com/diegoolavarria/recylink-commons#readme",
     "license": "MIT",
@@ -29,11 +29,6 @@ npm manifest:
     "types": "dist/index.d.ts",
     "files": [
       "dist"
-    ],
-    "keywords": [
-      "react",
-      "recylink",
-      "fields"
     ],
     "repository": "https://github.com/recylink/recylink-commons",
     "publishConfig": {
@@ -46,7 +41,7 @@ npm manifest:
       "build": "rm -rf types && tsc",
       "prepublish": "rm -rf dist && rollup -c && tsc",
       "rollup": "rm -rf dist && rollup -c",
-      "webpack": "webpack --mode production",
+      "webpack": "rm -rf dist && webpack",
       "storybook": "storybook dev -p 6006",
       "build-storybook": "storybook build"
     },
@@ -54,22 +49,13 @@ npm manifest:
       "url": "https://github.com/recylink/recylink-commons/issues"
     },
     "gitHead": "cca989f324d3dc67c38947717c002e580f812b5f",
-    "dependencies": {
-      "@recylink/react-components": "^1.7.3",
-      "@recylink/react-hooks": "^1.2.2",
-      "lodash.debounce": "^4.0.8",
-      "lodash.isequal": "^4.5.0",
-      "lodash.isnil": "^4.0.0",
-      "react-input-mask": "^2.0.4",
-      "react-number-format": "^5.3.1",
-      "react-select": "^5.8.0"
-    },
     "devDependencies": {
       "@babel/core": "^7.23.7",
       "@babel/preset-env": "^7.23.8",
       "@babel/preset-react": "^7.23.3",
       "@babel/preset-typescript": "^7.23.3",
       "@chromatic-com/storybook": "^1.2.18",
+      "@mdx-js/react": "^3.0.0",
       "@rollup/plugin-commonjs": "^25.0.7",
       "@rollup/plugin-node-resolve": "^15.2.3",
       "@rollup/plugin-terser": "^0.4.4",
@@ -83,34 +69,50 @@ npm manifest:
       "@storybook/react": "^8.0.0",
       "@storybook/react-webpack5": "^8.0.0",
       "@storybook/test": "^8.0.0",
-      "@types/lodash.debounce": "^4.0.9",
-      "@types/lodash.isarray": "^4.0.9",
-      "@types/lodash.isequal": "^4.5.8",
-      "@types/lodash.isnil": "^4.0.9",
       "@types/react": "^18.2.47",
-      "@types/react-input-mask": "^3.0.5",
       "babel-loader": "^9.1.3",
       "css-loader": "^6.9.0",
       "eslint": "^8.56.0",
-      "eslint-plugin-storybook": "^0.8.0",
+      "eslint-plugin-react": "^7.33.2",
+      "eslint-plugin-react-hooks": "^4.6.0",
+      "eslint-plugin-storybook": "^0.6.15",
+      "eslint-webpack-plugin": "^4.0.1",
       "postcss": "^8.4.33",
       "react": "^18.2.0",
       "react-dom": "^18.2.0",
+      "react-router-dom": "^6.21.1",
       "rollup": "^4.9.4",
       "rollup-plugin-dts": "^6.1.0",
       "rollup-plugin-peer-deps-external": "^2.2.4",
       "rollup-plugin-postcss": "^4.0.2",
-      "rollup-plugin-terser": "^7.0.2",
       "storybook": "^8.0.0",
       "typescript": "^5.3.3",
       "webpack": "^5.89.0",
+      "webpack-bundle-analyzer": "^4.10.1",
       "webpack-cli": "^5.1.4"
     },
     "peerDependencies": {
       "prop-types": "^15.8.1",
-      "react": "^18.2.0",
-      "react-dom": "^18.2.0",
-      "react-router-dom": "^6.21.1"
+      "react": "^^18.2.0",
+      "react-dom": "^^18.2.0",
+      "react-router-dom": "^5.0.0 || ^6.21.1"
+    },
+    "dependencies": {
+      "@react-icons/all-files": "^4.1.0",
+      "@recylink/react-hooks": "^1.2.2",
+      "dayjs": "^1.11.10",
+      "lodash.clonedeep": "^4.5.0",
+      "lodash.get": "^4.4.2",
+      "lodash.isstring": "^4.0.1",
+      "lodash.keys": "^4.2.0",
+      "lodash.omit": "^4.5.0",
+      "lodash.uniqueid": "^4.0.1",
+      "react-tooltip": "^5.25.1"
+    },
+    "externals": {
+      "react": "react",
+      "react-dom": "react-dom",
+      "react-router-dom": "react-router-dom"
     }
   }
 
